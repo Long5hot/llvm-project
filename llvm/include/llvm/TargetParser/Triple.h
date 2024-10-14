@@ -105,7 +105,8 @@ public:
     renderscript32, // 32-bit RenderScript
     renderscript64, // 64-bit RenderScript
     ve,             // NEC SX-Aurora Vector Engine
-    LastArchType = ve
+    tricore,
+    LastArchType = tricore
   };
   enum SubArchType {
     NoSubArch,
@@ -1063,6 +1064,11 @@ public:
   bool supportsCOMDAT() const {
     return !(isOSBinFormatMachO() || isOSBinFormatXCOFF() ||
              isOSBinFormatDXContainer());
+  }
+
+  /// Tests whether the target is tricore.
+  bool isTricore() const {
+    return getArch() == Triple::tricore;
   }
 
   /// Tests whether the target uses emulated TLS as default.

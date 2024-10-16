@@ -1039,6 +1039,21 @@ enum {
 #include "ELFRelocs/Xtensa.def"
 };
 
+// TriCore specific e_flags
+enum : unsigned {
+
+  EF_TRICORE_V1_1 = 0x80000000,
+  EF_TRICORE_V1_2 = 0x40000000,
+  EF_TRICORE_V1_3 = 0x20000000,
+  EF_TRICORE_PCP  = 0x01000000,
+  EF_TRICORE_PCP2 = 0x02000000
+};
+
+// ELF Relocations for TriCore
+enum {
+  #include "ELFRelocs/TriCore.def"
+};
+
 #undef ELF_RELOC
 
 // Section header.
